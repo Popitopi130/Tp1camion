@@ -39,7 +39,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Locale.setDefault(Locale.US);
 
         // Get the file names
@@ -101,6 +101,9 @@ public class Main {
             boxes = 0;
         }
 
+        // Start timing algorithm
+        long startTime = System.nanoTime();
+
         // Find building with the most boxes and put truck in it
         sortBuildingsByBox(buildings);
         buildings.get(0).changeTruck();
@@ -111,6 +114,11 @@ public class Main {
         // Do the distance travel optimization
         Building location = buildings.get(0);
         sortBuildingsByDistance(location, buildings);
+
+        // Stop timing algorithm
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println(duration + "ns");
 
         ArrayList<Building> usedBuildings = new ArrayList<>();
         truck.truckLoad(location.getAvailableBoxes());
