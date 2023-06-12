@@ -4,7 +4,7 @@ import java.util.Locale;
 
 public class Main {
     private static double calculateDistance(float latitude1, float longitude1, float latitude2, float longitude2) {
-        float earthRadius =  6371000 ;
+        double earthRadius =  6371000 ;
         double latDistance = Math.toRadians(latitude2 - latitude1);
         double lonDistance = Math.toRadians(longitude2 - longitude1);
         double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
@@ -106,7 +106,7 @@ public class Main {
         buildings.get(0).changeTruck();
         truck.setTruckLatitude(buildings.get(0).getLatitude());
         truck.setTruckLongitude(buildings.get(0).getLongitude());
-        truck.setCapacity(capacity);
+        truck.setCapacity(boxes);
 
         // Do the distance travel optimization
         Building location = buildings.get(0);
