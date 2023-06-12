@@ -1,4 +1,0 @@
-Truck position: (0.0)
-Distance:ow        Number of boxes:()        Position:()
-Distance:er        Number of boxes:()        Position:()
-Distance:tt        Number of boxes:()        Position:()

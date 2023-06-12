@@ -1,36 +1,39 @@
 public class Truck {
-    private int truckLatitude;
-    private int truckLongitude;
+    private float truckLatitude;
+    private float truckLongitude;
     private int capacity;
 
-    public Truck(int truckLatitude, int truckLongitude, int capacity){
+    public Truck(float truckLatitude, float truckLongitude, int capacity){
         this.truckLatitude = truckLatitude;
         this.truckLongitude = truckLongitude;
         this.capacity = capacity;
     }
-    public void setTruckLatitude(int truckLatitude) {
+    public void setTruckLatitude(float truckLatitude) {
         this.truckLatitude = truckLatitude;
     }
 
-    public void setTruckLongitude(int truckLongitude) {
+    public void setTruckLongitude(float truckLongitude) {
         this.truckLongitude = truckLongitude;
     }
 
-    public void setCapcity(int capcity) {
-        this.capacity = capcity;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
-    public int getTruckLatitude() {
+    public float getTruckLatitude() {
         return truckLatitude;
     }
 
-    public int getTruckLongitude() {
+    public float getTruckLongitude() {
         return truckLongitude;
     }
 
-    public int getCapcity() {
+    public int getCapacity() {
         return capacity;
     }
+
+
+
 
     public boolean availability(){
         return capacity > 0;
