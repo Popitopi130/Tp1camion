@@ -5,10 +5,10 @@ import java.util.Locale;
 public class Main {
     private static double calculateDistance(float latitude1, float longitude1, float latitude2, float longitude2) {
         double earthRadius =  6371000 ;
-        double latDistance = Math.toRadians(latitude2 - latitude1);
-        double lonDistance = Math.toRadians(longitude2 - longitude1);
+        double latDistance = (latitude2 - latitude1) * (180 / Math.PI);
+        double lonDistance = (longitude2 - longitude1) * (180 / Math.PI);
         double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
-                + Math.cos(Math.toRadians(latitude1)) * Math.cos(Math.toRadians(latitude2))
+                + Math.cos((latitude1) * (180 / Math.PI)) * Math.cos((latitude2) * (180 / Math.PI))
                 * Math.sin(lonDistance / 2) * Math.sin(lonDistance / 2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return (earthRadius * c);
